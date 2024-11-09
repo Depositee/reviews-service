@@ -10,6 +10,11 @@ services:
          - '8080:8080' # Maps container's port 8080 to host
       environment:
          - DATABASE_URL=postgresql://postgres:postgres@review-db:5432/reviewdb
+         - DB_USER=postgres
+         - DB_HOST=localhost
+         - DB_NAME=reviews
+         - DB_PASSWORD=pywt
+         - PORT=8080
       depends_on:
          - review-db
       networks:
